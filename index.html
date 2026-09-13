@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'self'">
+  <title>JPIA-NCF Chapter Digital Transparency Board</title>
+</head>
+<body>
+  <p>Loading the JPIA-NCF Chapter Digital Transparency Board...</p>
+  <script>
+    fetch('JPIA%20DIGITAL%20TRANSPARENCY%20BOARD.txt', {credentials:'same-origin'})
+      .then(response => {
+        if (!response.ok) throw new Error('Page source could not be loaded.');
+        return response.text();
+      })
+      .then(source => {
+        document.open();
+        document.write(source);
+        document.close();
+      })
+      .catch(() => {
+        document.body.innerHTML = '<p>The transparency board could not be loaded. Please refresh the page.</p>';
+      });
+  </script>
+</body>
+</html>
